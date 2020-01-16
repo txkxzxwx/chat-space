@@ -33,6 +33,7 @@ Things you may want to cover:
 
 ### Association
 - has_many :groups
+- has_many :messages
 ### index
 - add_index :users,  :name
 
@@ -42,11 +43,11 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|chat_name|text|null: false|
-|users-id|integer|null: false, foreign_key: true|
+|name|string|null: false|
 
 ### Association
 - has_many :users
+- has_many :messages
 
 
 
@@ -54,13 +55,13 @@ Things you may want to cover:
 
 |Column|Type|Options|
 |------|----|-------|
-|body|string|null: false|
+|body|string||
 |image|string||
-|group-id|string|null: false, foreign_key: true|
-|user-id|string|null: false, foreign_key: true|
+|group_id|string|null: false, foreign_key: true|
+|user_id|string|null: false, foreign_key: true|
 
 ### Association
-- has_many :groups
+- belongs_to :group
 - belongs_to :user
 
 
