@@ -34,7 +34,7 @@ Things you may want to cover:
 ### Association
 - has_many :groups
 - has_many :messages
-- belongs_to :groups_users
+- has_many :groups_users
 ### index
 - add_index :users,  :name
 
@@ -49,7 +49,7 @@ Things you may want to cover:
 ### Association
 - has_many :users
 - has_many :messages
-- belongs_to :groups_users
+- has_many :groups_users
 
 
 
