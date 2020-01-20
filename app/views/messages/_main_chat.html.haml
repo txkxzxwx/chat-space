@@ -1,0 +1,44 @@
+.main_chat
+  .group-info
+    .group-info__name
+      .group-info__name__group
+        test
+      .group-info__name__member
+        member:masa
+    .group-info__edit
+      =link_to "#", class: "group-info__edit__btn" do
+        Edit
+  .message-list
+    .post
+      .post__upper-info
+        .post__upper-info__name
+          masa
+        .post__upper-info__date
+          2019/01/19/(Sun) 04:20:00
+      .post__text
+        おはよう！
+    .post
+      .post__upper-info
+        .post__upper-info__name
+          masa
+        .post__upper-info__date
+          2019/01/19/(Sun) 04:20:00
+      .post__text
+        おはよう！
+    .post
+      .post__upper-info
+        .post__upper-info__name
+          masa
+        .post__upper-info__date
+          2019/01/19/(Sun) 04:20:00
+      .post__text
+        おはよう！
+  .message-form
+    .input-box
+      <input type="text" class= "input-box__text" placeholder="type a message">
+      .input-box__img
+        %label{for: "image",class: "input-box__img__btn"}
+          = icon('fas', 'image')
+        %input{type: "file", id: "image",class: "input-box__img__file"}
+    =link_to "#", class: "message-form__send" do
+      Send
