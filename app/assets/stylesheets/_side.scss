@@ -1,0 +1,63 @@
+$sidebar-Color: #253141; 
+$font-color: #fff;
+$grouplist-color: #2F3e51;
+
+.side_bar {
+  float: left;
+  .user-name {
+    width: 300px;
+    height: 100px;
+    background-color: $sidebar-Color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &__box {
+      width: 260px;
+      height: 20px;
+      background-color: $sidebar-Color;
+      display: flex;
+      justify-content: space-between;
+      &__name {
+        background-color: $sidebar-Color;
+        line-height: 20px;
+        color: $font-color;
+        font-weight: bold;
+      }
+      &__icon {
+        background-color: $sidebar-Color;
+        line-height: 20px;
+        width: 60px;
+        text-align: right;
+        &__btn__edit{
+            color: $font-color;
+            margin-right: 5px;
+            text-decoration: none;
+        }
+        &__btn__cog{
+          color: $font-color;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+    
+  .group-list {
+    width: 300px;
+    height: 100vh;
+    background-color: $grouplist-color;
+    .post {
+      &__name {
+        background-color: $grouplist-color;
+        font-size: 15px;
+        color: $font-color;
+        padding: 20px 20px 5px 20px;
+      }
+      &__message {
+        background-color: $grouplist-color;
+        font-size: 11px;
+        color: $font-color;
+        padding: 0 20px 40px;
+      }
+    }
+  }
+}
