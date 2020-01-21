@@ -2,11 +2,11 @@
   .user-name
     .user-name__box
       .user-name__box__name
-        masa
+        = current_user.name
       .user-name__box__icon
         = link_to "#", class: "user-name__box__icon__btn__edit" do
           = icon('far', 'edit')
-        = link_to "#", class: "user-name__box__icon__btn__cog" do
+        = link_to edit_user_path(current_user), class: "user-name__box__icon__btn__cog" do
           = icon('fas', 'cog')
   .group-list
     .post
