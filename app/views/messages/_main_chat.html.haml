@@ -2,11 +2,12 @@
   .group-info
     .group-info__name
       .group-info__name__group
-        test
+        = @group.name
       .group-info__name__member
-        member:masa
+        - @group.users.each do |user|
+          =user.name
     .group-info__edit
-      =link_to "#", class: "group-info__edit__btn" do
+      =link_to edit_group_path(@group), class: "group-info__edit__btn" do
         Edit
   .message-list
     .post
@@ -33,12 +34,14 @@
           2019/01/19/(Sun) 04:20:00
       .post__text
         おはよう！
+      
   .message-form
-    .input-box
-      <input type="text" class= "input-box__text" placeholder="type a message">
+    = form_for [@group, @message], html: {class: "input-box"} do |f|
+      = f.text_field :content, class: 'input-box__text', placeholder: 'type a message'
       .input-box__img
-        %label{for: "image",class: "input-box__img__btn"}
+        = f.label :image, class: 'input-box__img__btn' do
           = icon('fas', 'image')
-        %input{type: "file", id: "image",class: "input-box__img__file"}
-    =link_to "#", class: "message-form__send" do
-      Send
+          = f.file_field :image, class: 'input-box__img__file'
+      = f.submit 'Send', class: 'message-form__send'
+.messages
+  = render @messages
