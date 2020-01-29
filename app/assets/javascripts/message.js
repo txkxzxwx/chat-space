@@ -42,9 +42,7 @@ $(function(){
  $('#new_message').on('submit', function(e){
   e.preventDefault();
   var formData = new FormData(this);
-  console.log(formData)
   var url = $(this).attr('action')
-  console.log(url)
   $.ajax({
     url: url,
     type: "POST",
@@ -80,7 +78,6 @@ $(function(){
 
   .done(function(messages) {
     if (messages.length !== 0) {
-console.log(messages)
       //追加するHTMLの入れ物を作る
       var insertHTML = '';
       //配列messagesの中身一つ一つを取り出し、HTMLに変換したものを入れ物に足し合わせる
@@ -94,10 +91,10 @@ console.log(messages)
       $(".form__submit").prop("disabled", false);
     }
   })
-  .fail(function() {
-    console.log('error');
+  .fail(function(){
+    alert('error');
   });
-  };
+};
     if (document.location.href.match(/\/groups\/\d+\/messages/)) {
       setInterval(reloadMessages, 7000);
   }
