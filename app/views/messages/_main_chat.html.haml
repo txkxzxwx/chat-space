@@ -9,31 +9,8 @@
     .group-info__edit
       =link_to edit_group_path(@group), class: "group-info__edit__btn" do
         Edit
-  .message-list
-    .post
-      .post__upper-info
-        .post__upper-info__name
-          masa
-        .post__upper-info__date
-          2019/01/19/(Sun) 04:20:00
-      .post__text
-        おはよう！
-    .post
-      .post__upper-info
-        .post__upper-info__name
-          masa
-        .post__upper-info__date
-          2019/01/19/(Sun) 04:20:00
-      .post__text
-        おはよう！
-    .post
-      .post__upper-info
-        .post__upper-info__name
-          masa
-        .post__upper-info__date
-          2019/01/19/(Sun) 04:20:00
-      .post__text
-        おはよう！
+  .messages
+    = render @messages
       
   .message-form
     = form_for [@group, @message], html: {class: "input-box"} do |f|
@@ -43,5 +20,3 @@
           = icon('fas', 'image')
           = f.file_field :image, class: 'input-box__img__file'
       = f.submit 'Send', class: 'message-form__send'
-.messages
-  = render @messages
