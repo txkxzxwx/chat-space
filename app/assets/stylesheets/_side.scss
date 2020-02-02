@@ -12,6 +12,7 @@ $grouplist-color: #2F3e51;
     display: flex;
     align-items: center;
     justify-content: center;
+    position: fixed;
     &__box {
       width: 260px;
       height: 20px;
@@ -44,7 +45,7 @@ $grouplist-color: #2F3e51;
     
   .group-list {
     width: 300px;
-    height: calc(100vh - 100px);
+    height: calc(100vh);
     background-color: $grouplist-color;
     .group {
       &__name {
